@@ -1,0 +1,16 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/LimpidCrypto/xrpl-models/main/schemas/ledger/has_optional_previous_txn_id.schema.json",
+    "title": "HasOptionalPreviousTxnID",
+    "type": "object",
+    "properties": {
+        "PreviousTxnID": {
+            "$ref": "https://raw.githubusercontent.com/LimpidCrypto/xrpl-models/main/schemas/types.json#/$defs/HASH256",
+            "description": "The identifying hash of the transaction that most recently modified this object. This field was added in the `fixPreviousTxnID` amendment, so it may not be present in every object."
+        },
+        "PreviousTxnLgrSeq": {
+            "$ref": "https://raw.githubusercontent.com/LimpidCrypto/xrpl-models/main/schemas/types.json#/$defs/u32",
+            "description": "The index of the ledger that contains the transaction that most recently modified this object. This field was added in the `fixPreviousTxnID` amendment, so it may not be present in every object."
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/LimpidCrypto/xrpl-models/main/schemas/types.json",
+    "$defs": {
+        "HASH256": {
+            "type": "string",
+            "description": "A 256-bit hash that can be used to identify a ledger object.",
+            "pattern": "^[A-F0-9]{64}$"
+        },
+        "u16": {
+            "type": "integer",
+            "description": "A 16-bit unsigned integer.",
+            "minimum": 0,
+            "maximum": 65535,
+            "multipleOf": 1
+        },
+        "u32": {
+            "type": "integer",
+            "description": "A 32-bit unsigned integer.",
+            "minimum": 0,
+            "maximum": 4294967295,
+            "multipleOf": 1
+        },
+        "u64": {
+            "type": "integer",
+            "description": "A 64-bit unsigned integer.",
+            "minimum": 0,
+            "maximum": 18446744073709551615,
+            "multipleOf": 1
+        }
+    }
+}
