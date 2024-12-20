@@ -1,0 +1,17 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/LimpidCrypto/xrpl-models/main/schemas/common/mpt_amount.json",
+    "title": "MPTAmount",
+    "type": "object",
+    "properties": {
+        "mpt_issuance_id": {
+            "type": "string",
+            "description": "The issuance ID of the MPT."
+        },
+        "value": {
+            "type": "string",
+            "description": "The amount of the MPT.",
+            "pattern": "^[0-9]+$"
+        }
+    }
+}

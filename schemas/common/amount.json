@@ -1,0 +1,13 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/LimpidCrypto/xrpl-models/main/schemas/common/amount.json",
+    "title": "Amount",
+    "$oneOf": [
+        {
+            "$ref": "https://raw.githubusercontent.com/LimpidCrypto/xrpl-models/main/schemas/common/issued_currency_amount.json"
+        },
+        {
+            "type": "string"
+        }
+    ]
+}

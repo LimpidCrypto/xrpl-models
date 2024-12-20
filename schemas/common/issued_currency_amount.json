@@ -1,0 +1,24 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/LimpidCrypto/xrpl-models/main/schemas/common/issued_currency_amount.json",
+    "title": "IssuedCurrencyAmount",
+    "type": "object",
+    "$allOf": [
+        {
+            "$ref": "https://raw.githubusercontent.com/LimpidCrypto/xrpl-models/main/schemas/common/issued_currency.json"
+        },
+        {
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "string",
+                    "description": "The amount of the issued currency, represented as a decimal string.",
+                    "pattern": "^[0-9]+$"
+                }
+            },
+            "required": [
+                "value"
+            ]
+        }
+    ]
+}

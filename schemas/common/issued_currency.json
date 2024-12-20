@@ -12,5 +12,9 @@
             "$ref": "https://raw.githubusercontent.com/LimpidCrypto/xrpl-models/main/schemas/types.json#/$defs/ACCOUNT",
             "description": "The address of the account that issued the currency."
         }
-    }
+    },
+    "required": [
+        "currency",
+        "issuer"
+    ]
 }

@@ -10,9 +10,11 @@
             "description": "The currency code for XRP."
         },
         "issuer": {
-            "type": ["string", "null"],
-            "const": "",
+            "$ref": "https://raw.githubusercontent.com/LimpidCrypto/xrpl-models/main/schemas/types.json#/$defs/ACCOUNT",
             "description": "The empty string, because XRP is not issued by any single entity."
         }
-    }
+    },
+    "required": [
+        "currency"
+    ]
 }
