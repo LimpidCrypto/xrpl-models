@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://github.com/LimpidCrypto/xrpl-models/json_schema/common/index.schema.json",
+    "$id": "https://github.com/LimpidCrypto/xrpl-models/blob/main/json_schema/common/index.schema.json",
     "definitions": {
         "XRP": {
             "type": "object",
