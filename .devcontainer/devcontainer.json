@@ -23,7 +23,19 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "chmod -R +x ./.devcontainer/start.sh && ./.devcontainer/start.sh"
+	"postCreateCommand": "chmod -R +x ./.devcontainer/start.sh && ./.devcontainer/start.sh",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"vadimcn.vscode-lldb",
+				"denoland.vscode-deno",
+				"tamasfe.even-better-toml",
+				"rust-lang.rust-analyzer",
+				"fill-labs.dependi",
+				"tberman.json-schema-validator"
+			]
+		}
+	}
 	// Configure tool-specific properties.
 	// "customizations": {},
 

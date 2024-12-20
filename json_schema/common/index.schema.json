@@ -1,0 +1,380 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://github.com/LimpidCrypto/xrpl-models/json_schema/common/index.schema.json",
+    "definitions": {
+        "XRP": {
+            "type": "object",
+            "properties": {
+                "currency": {
+                    "type": "string",
+                    "const": "XRP"
+                },
+                "issuer": {
+                    "type": "null"
+                }
+            },
+            "required": ["currency"]
+        },
+        "IssuedCurrency": {
+            "type": "object",
+            "properties": {
+                "currency": {
+                    "type": "string"
+                },
+                "issuer": {
+                    "type": "string"
+                }
+            },
+            "required": ["currency", "issuer"]
+        },
+        "IssuedCurrencyAmount": {
+            "allOf": [
+                { "$ref": "#/definitions/IssuedCurrency" },
+                {
+                    "type": "object",
+                    "properties": {
+                        "value": {
+                            "type": "string"
+                        }
+                    },
+                    "required": ["value"]
+                }
+            ]
+        },
+        "MPTAmount": {
+            "type": "object",
+            "properties": {
+                "mpt_issuance_id": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                }
+            },
+            "required": ["mpt_issuance_id", "value"]
+        },
+        "Balance": {
+            "type": "object",
+            "properties": {
+                "currency": {
+                    "type": "string"
+                },
+                "issuer": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "string"
+                }
+            },
+            "required": ["currency", "value"]
+        },
+        "Signer": {
+            "type": "object",
+            "properties": {
+                "Signer": {
+                    "type": "object",
+                    "properties": {
+                        "Account": {
+                            "type": "string"
+                        },
+                        "TxnSignature": {
+                            "type": "string"
+                        },
+                        "SigningPubKey": {
+                            "type": "string"
+                        }
+                    },
+                    "required": ["Account", "TxnSignature", "SigningPubKey"]
+                }
+            },
+            "required": ["Signer"]
+        },
+        "Memo": {
+            "type": "object",
+            "properties": {
+                "Memo": {
+                    "type": "object",
+                    "properties": {
+                        "MemoData": {
+                            "type": "string"
+                        },
+                        "MemoType": {
+                            "type": "string"
+                        },
+                        "MemoFormat": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "required": ["Memo"]
+        },
+        "PathStep": {
+            "type": "object",
+            "properties": {
+                "account": {
+                    "type": "string"
+                },
+                "currency": {
+                    "type": "string"
+                },
+                "issuer": {
+                    "type": "string"
+                }
+            }
+        },
+        "SignerEntry": {
+            "type": "object",
+            "properties": {
+                "SignerEntry": {
+                    "type": "object",
+                    "properties": {
+                        "Account": {
+                            "type": "string"
+                        },
+                        "SignerWeight": {
+                            "type": "number"
+                        },
+                        "WalletLocator": {
+                            "type": "string"
+                        }
+                    },
+                    "required": ["Account", "SignerWeight"]
+                }
+            },
+            "required": ["SignerEntry"]
+        },
+        "ResponseOnlyTxInfo": {
+            "type": "object",
+            "properties": {
+                "date": {
+                    "type": "number"
+                },
+                "hash": {
+                    "type": "string"
+                },
+                "ledger_index": {
+                    "type": "number"
+                },
+                "ledger_hash": {
+                    "type": "string"
+                },
+                "inLedger": {
+                    "type": "number"
+                }
+            }
+        },
+        "NFTOffer": {
+            "type": "object",
+            "properties": {
+                "amount": {
+                    "$ref": "#/definitions/Amount"
+                },
+                "flags": {
+                    "type": "number"
+                },
+                "nft_offer_index": {
+                    "type": "string"
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "destination": {
+                    "type": "string"
+                },
+                "expiration": {
+                    "type": "number"
+                }
+            },
+            "required": ["amount", "flags", "nft_offer_index", "owner"]
+        },
+        "NFToken": {
+            "type": "object",
+            "properties": {
+                "nft_id": {
+                    "type": "string"
+                },
+                "ledger_index": {
+                    "type": "number"
+                },
+                "owner": {
+                    "type": "string"
+                },
+                "is_burned": {
+                    "type": "boolean"
+                },
+                "flags": {
+                    "type": "number"
+                },
+                "transfer_fee": {
+                    "type": "number"
+                },
+                "issuer": {
+                    "type": "string"
+                },
+                "nft_taxon": {
+                    "type": "number"
+                },
+                "nft_serial": {
+                    "type": "number"
+                },
+                "uri": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "nft_id",
+                "ledger_index",
+                "owner",
+                "is_burned",
+                "flags",
+                "transfer_fee",
+                "issuer",
+                "nft_taxon",
+                "nft_serial",
+                "uri"
+            ]
+        },
+        "AuthAccount": {
+            "type": "object",
+            "properties": {
+                "AuthAccount": {
+                    "type": "object",
+                    "properties": {
+                        "Account": {
+                            "type": "string"
+                        }
+                    },
+                    "required": ["Account"]
+                }
+            },
+            "required": ["AuthAccount"]
+        },
+        "XChainBridge": {
+            "type": "object",
+            "properties": {
+                "LockingChainDoor": {
+                    "type": "string"
+                },
+                "LockingChainIssue": {
+                    "$ref": "#/definitions/Currency"
+                },
+                "IssuingChainDoor": {
+                    "type": "string"
+                },
+                "IssuingChainIssue": {
+                    "$ref": "#/definitions/Currency"
+                }
+            },
+            "required": [
+                "LockingChainDoor",
+                "LockingChainIssue",
+                "IssuingChainDoor",
+                "IssuingChainIssue"
+            ]
+        },
+        "PriceData": {
+            "type": "object",
+            "properties": {
+                "PriceData": {
+                    "type": "object",
+                    "properties": {
+                        "BaseAsset": {
+                            "type": "string"
+                        },
+                        "QuoteAsset": {
+                            "type": "string"
+                        },
+                        "AssetPrice": {
+                            "oneOf": [
+                                {
+                                    "type": "number"
+                                },
+                                {
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "Scale": {
+                            "type": "number"
+                        }
+                    },
+                    "required": ["BaseAsset", "QuoteAsset"]
+                }
+            },
+            "required": ["PriceData"]
+        },
+        "Currency": {
+            "oneOf": [
+                { "$ref": "#/definitions/IssuedCurrency" },
+                { "$ref": "#/definitions/XRP" }
+            ]
+        },
+        "Amount": {
+            "oneOf": [
+                { "$ref": "#/definitions/IssuedCurrencyAmount" },
+                { "type": "string" }
+            ]
+        }
+    },
+    "title": "XRPL Models",
+    "type": "object",
+    "properties": {
+        "RIPPLED_API_V1": {
+            "type": "number",
+            "const": 1
+        },
+        "RIPPLED_API_V2": {
+            "type": "number",
+            "const": 2
+        },
+        "DEFAULT_API_VERSION": {
+            "type": "number",
+            "const": 2
+        },
+        "APIVersion": {
+            "enum": [1, 2]
+        },
+        "LedgerIndex": {
+            "oneOf": [
+                { "type": "number" },
+                { "enum": ["validated", "closed", "current"] }
+            ]
+        },
+        "XRP": { "$ref": "#/definitions/XRP" },
+        "IssuedCurrency": { "$ref": "#/definitions/IssuedCurrency" },
+        "Currency": { "$ref": "#/definitions/Currency" },
+        "IssuedCurrencyAmount": {
+            "$ref": "#/definitions/IssuedCurrencyAmount"
+        },
+        "MPTAmount": { "$ref": "#/definitions/MPTAmount" },
+        "Amount": { "$ref": "#/definitions/Amount" },
+        "Balance": { "$ref": "#/definitions/Balance" },
+        "Signer": { "$ref": "#/definitions/Signer" },
+        "Memo": { "$ref": "#/definitions/Memo" },
+        "StreamType": {
+            "enum": [
+                "consensus",
+                "ledger",
+                "manifests",
+                "peer_status",
+                "transactions",
+                "transactions_proposed",
+                "server",
+                "validations"
+            ]
+        },
+        "PathStep": { "$ref": "#/definitions/PathStep" },
+        "Path": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/PathStep" }
+        },
+        "SignerEntry": { "$ref": "#/definitions/SignerEntry" },
+        "ResponseOnlyTxInfo": { "$ref": "#/definitions/ResponseOnlyTxInfo" },
+        "NFTOffer": { "$ref": "#/definitions/NFTOffer" },
+        "NFToken": { "$ref": "#/definitions/NFToken" },
+        "AuthAccount": { "$ref": "#/definitions/AuthAccount" },
+        "XChainBridge": { "$ref": "#/definitions/XChainBridge" },
+        "PriceData": { "$ref": "#/definitions/PriceData" }
+    }
+}
