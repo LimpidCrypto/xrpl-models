@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://github.com/LimpidCrypto/xrpl-models/blob/main/schemas/ledger/has_previous_txn_id.schema.json",
+    "$id": "https://raw.githubusercontent.com/LimpidCrypto/xrpl-models/main/schemas/ledger/has_previous_txn_id.schema.json",
     "title": "HasPreviousTxnID",
     "type": "object",
     "properties": {
