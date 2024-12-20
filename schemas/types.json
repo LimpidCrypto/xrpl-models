@@ -7,6 +7,11 @@
             "description": "A 256-bit hash that can be used to identify a ledger object.",
             "pattern": "^[A-F0-9]{64}$"
         },
+        "ACCOUNT": {
+            "type": "string",
+            "description": "An XRP Ledger account address.",
+            "pattern": "^r[1-9A-HJ-NP-Za-km-z]{25,34}$"
+        },
         "u16": {
             "type": "integer",
             "description": "A 16-bit unsigned integer.",

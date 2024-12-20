@@ -1,0 +1,18 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/LimpidCrypto/xrpl-models/main/schemas/common/xrp.json",
+    "title": "XRP",
+    "type": "object",
+    "properties": {
+        "currency": {
+            "type": "string",
+            "const": "XRP",
+            "description": "The currency code for XRP."
+        },
+        "issuer": {
+            "type": ["string", "null"],
+            "const": "",
+            "description": "The empty string, because XRP is not issued by any single entity."
+        }
+    }
+}

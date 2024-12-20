@@ -1,0 +1,16 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/LimpidCrypto/xrpl-models/main/schemas/common/issued_currency.json",
+    "title": "IssuedCurrency",
+    "type": "object",
+    "properties": {
+        "currency": {
+            "type": "string",
+            "description": "The currency code for the issued currency."
+        },
+        "issuer": {
+            "$ref": "https://raw.githubusercontent.com/LimpidCrypto/xrpl-models/main/schemas/types.json#/$defs/ACCOUNT",
+            "description": "The address of the account that issued the currency."
+        }
+    }
+}
