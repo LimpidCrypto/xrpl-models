@@ -1,0 +1,24 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://github.com/LimpidCrypto/xrpl-models/blob/main/json_schema/ledger/has_previous_txn_id.schema.json",
+    "title": "HasPreviousTxnID",
+    "type": "object",
+    "properties": {
+        "PreviousTxnID": {
+            "type": "string",
+            "description": "The identifying hash of the transaction that most recently modified this object.",
+            "pattern": "^[A-F0-9]{64}$"
+        },
+        "PreviousTxnLgrSeq": {
+            "type": "integer",
+            "description": "The index of the ledger that contains the transaction that most recently modified this object.",
+            "minimum": 0,
+            "maximum": 4294967295,
+            "multipleOf": 1
+        }
+    },
+    "required": [
+        "PreviousTxnID",
+        "PreviousTxnLgrSeq"
+    ]
+}
