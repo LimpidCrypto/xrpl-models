@@ -1,0 +1,8 @@
+[package]
+name = "xrpl-models"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1.0.216", features = ["derive"] }
+typify = { git = "https://github.com/agily/typify", branch = "support-external-references", package = "typify" }
